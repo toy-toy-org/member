@@ -1,4 +1,4 @@
-package com.wooteco.member.business;
+package com.wooteco.member.business.dto;
 
 import com.wooteco.member.domain.Member;
 import lombok.AllArgsConstructor;
