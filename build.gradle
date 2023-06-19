@@ -44,6 +44,9 @@ dependencies {
 	// feign
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 	implementation 'io.github.openfeign:feign-gson:12.2'
+
+	// kafka
+	implementation 'org.springframework.kafka:spring-kafka'
 }
 
 tasks.named('test') {
