@@ -10,10 +10,10 @@ import org.springframework.transaction.event.TransactionalEventListener;
 @RequiredArgsConstructor
 public class EventService {
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<Long, String> kafkaTemplate;
 
     @TransactionalEventListener
     public void listenCreateMemberEvent(MemberCreateEvent event) {
-        kafkaTemplate.send("sign-up", event.getEmail());
+        kafkaTemplate.send("sign-up", event.getId(), event.getEmail());
     }
 }

@@ -2,16 +2,16 @@ package com.wooteco.member.business.dto;
 
 public class MemberCreateEvent {
 
-    private final String name;
+    private final Long id;
     private final String email;
 
-    public MemberCreateEvent(String name, String email) {
-        this.name = name;
+    public MemberCreateEvent(Long id, String email) {
+        this.id = id;
         this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public Long getId() {
+        return id;
     }
 
     public String getEmail() {

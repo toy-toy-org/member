@@ -19,7 +19,7 @@ public class MemberService {
 
     public Long createMember(MemberCreateRequest request) {
         Member member = memberRepository.save(request.toMember());
-        eventPublisher.publishEvent(new MemberCreateEvent(member.getName(), member.getEmail()));
+        eventPublisher.publishEvent(new MemberCreateEvent(member.getId(), member.getEmail()));
         return member.getId();
     }
 }
