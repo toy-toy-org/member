@@ -14,6 +14,6 @@ public class EventService {
 
     @TransactionalEventListener
     public void listenCreateMemberEvent(MemberCreateEvent event) {
-        kafkaTemplate.send("sign-up", event.getId(), event.getEmail());
+        kafkaTemplate.send("sign-up", event.id(), event.email());
     }
 }
