@@ -1,12 +1,8 @@
 package com.wooteco.member.business;
 
 import com.wooteco.member.business.client.MailOpenFeign;
-import com.wooteco.member.business.dto.FollowerRequest;
-import com.wooteco.member.business.dto.FollowerResponse;
 import com.wooteco.member.business.dto.MailSendRequest;
 import com.wooteco.member.business.dto.MemberCreateRequest;
-import com.wooteco.member.domain.Follow;
-import com.wooteco.member.domain.FollowRepository;
 import com.wooteco.member.domain.Member;
 import com.wooteco.member.domain.MemberRepository;
 import lombok.RequiredArgsConstructor;
