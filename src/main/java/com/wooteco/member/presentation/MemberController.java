@@ -18,21 +18,4 @@ public class MemberController {
     public Long createMember(@RequestBody MemberCreateRequest memberCreateRequest) {
         return memberService.createMember(memberCreateRequest);
     }
-
-    @PostMapping("/follow")
-    @ResponseStatus(HttpStatus.CREATED)
-    public void followMember(@RequestBody FollowerRequest followerRequest) {
-        memberService.createFollower(followerRequest);
-    }
-
-    @DeleteMapping("/follow")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void unfollowMember(@RequestBody FollowerRequest followerRequest) {
-        memberService.deleteFollower(followerRequest);
-    }
-
-    @GetMapping("/followers/{memberId}")
-    public FollowerResponse findFollowers(@PathVariable("memberId") Long memberId) {
-        return memberService.getFollowers(memberId);
-    }
 }
