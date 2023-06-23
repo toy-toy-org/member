@@ -1,7 +1,7 @@
 package com.wooteco.member.presentation;
 
-import com.wooteco.member.business.dto.MemberCreateRequest;
 import com.wooteco.member.business.MemberService;
+import com.wooteco.member.business.dto.MemberCreateRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
