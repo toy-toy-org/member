@@ -19,20 +19,20 @@ public class FollowService {
 
     @Transactional
     public void createFollower(FollowerRequest request) {
-        Member following = memberRepository.findById(request.getMemberId()).orElseThrow();
-        Member follower = memberRepository.findById(request.getFollowerId()).orElseThrow();
-        followRepository.save(new Follow(following, follower));
+        Member followingMember = memberRepository.findById(request.getMemberId()).orElseThrow();
+        Member followerMember = memberRepository.findById(request.getFollowerMemberId()).orElseThrow();
+        followRepository.save(new Follow(followingMember, followerMember));
     }
 
     @Transactional
     public void deleteFollower(FollowerRequest request) {
-        Member following = memberRepository.findById(request.getMemberId()).orElseThrow();
-        Member follower = memberRepository.findById(request.getFollowerId()).orElseThrow();
-        followRepository.deleteByFollowingAndFollower(follower, follower);
+        Member followingMember = memberRepository.findById(request.getMemberId()).orElseThrow();
+        Member followerMember = memberRepository.findById(request.getFollowerMemberId()).orElseThrow();
+        followRepository.deleteByFollowingMemberAndFollowerMember(followingMember, followerMember);
     }
 
     @Transactional(readOnly = true)
     public FollowerResponse getFollowers(Long memberId) {
-        return new FollowerResponse(followRepository.findFollowerIdsByFollowingId(memberId));
+        return new FollowerResponse(followRepository.findFollowerMemberIdsByFollowingMemberId(memberId));
     }
 }

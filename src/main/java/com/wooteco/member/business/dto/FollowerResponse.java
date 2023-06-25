@@ -9,9 +9,9 @@ import java.util.List;
 @NoArgsConstructor
 public class FollowerResponse {
 
-    private List<Long> followerIds;
+    private List<Long> followerMemberIds;
 
-    public FollowerResponse(List<Long> followerIds) {
-        this.followerIds = followerIds;
+    public FollowerResponse(List<Long> followerMemberIds) {
+        this.followerMemberIds = followerMemberIds;
     }
 }

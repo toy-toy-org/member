@@ -34,13 +34,13 @@ class FollowRepositoryTest {
 
     @Test
     void 언팔로우한다() {
-        int affectedQuery = followRepository.deleteByFollowingAndFollower(eden, nede);
+        int affectedQuery = followRepository.deleteByFollowingMemberAndFollowerMember(eden, nede);
         assertThat(affectedQuery).isOne();
     }
 
     @Test
     void 팔로잉_id로_팔로워들을_조회한다() {
-        List<Long> followerIds = followRepository.findFollowerIdsByFollowingId(eden.getId());
+        List<Long> followerIds = followRepository.findFollowerMemberIdsByFollowingMemberId(eden.getId());
         Assertions.assertAll(
                 () -> assertThat(followerIds).hasSize(1),
                 () -> assertThat(followerIds.get(0)).isEqualTo(nede.getId())

@@ -16,14 +16,14 @@ public class Follow extends AbstractAggregateRoot<Follow> {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Member following;
+    private Member followingMember;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private Member follower;
+    private Member followerMember;
 
-    public Follow(Member following, Member follower) {
-        this.following = following;
-        this.follower = follower;
-        registerEvent(new FollowCreateEvent(this.following.getId(), this.follower.getId()));
+    public Follow(Member followingMember, Member followerMember) {
+        this.followingMember = followingMember;
+        this.followerMember = followerMember;
+        registerEvent(new FollowCreateEvent(this.followingMember.getId(), this.followerMember.getId()));
     }
 }

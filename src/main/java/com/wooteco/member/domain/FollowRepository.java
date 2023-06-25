@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface FollowRepository extends JpaRepository<Follow, Long> {
-    int deleteByFollowingAndFollower(Member following, Member follower);
+    int deleteByFollowingMemberAndFollowerMember(Member followingMember, Member followerMember);
 
-    @Query("SELECT f.follower.id FROM Follow f WHERE f.following.id = :followingId")
-    List<Long> findFollowerIdsByFollowingId(Long followingId);
+    @Query("SELECT f.followerMember.id FROM Follow f WHERE f.followingMember.id = :followingMemberId")
+    List<Long> findFollowerMemberIdsByFollowingMemberId(Long followingMemberId);
 }

@@ -70,6 +70,6 @@ class FollowServiceTest {
     @Test
     void 팔로워를_조회한다() {
         FollowerResponse response = followService.getFollowers(eden.getId());
-        assertThat(response.getFollowerIds()).hasSize(1);
+        assertThat(response.getFollowerMemberIds()).hasSize(1);
     }
 }

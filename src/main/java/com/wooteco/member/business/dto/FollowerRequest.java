@@ -8,5 +8,5 @@ import lombok.Getter;
 public class FollowerRequest {
 
     private Long memberId;
-    private Long followerId;
+    private Long followerMemberId;
 }
